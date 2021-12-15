@@ -50,4 +50,14 @@ h1{
       text-align: center;
       font-size: 150%;
   }
+  card-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 320px;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+  }
 

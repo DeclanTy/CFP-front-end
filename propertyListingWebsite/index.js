@@ -50,9 +50,16 @@ const getProperties = () => {
             getOutput.innerHTML = "";
 
             for (let property of properties) {
-                const propertyContainer = document.createElement("div");
 
-                const address = document.createElement("p");
+                const propertyCard = document.createElement("div");
+                propertyCard.classList.add("card");
+
+
+
+                const propertyContainer = document.createElement("div");
+                //propertyBody.classList.add("card-body");
+
+                const address = document.createElement("h5");
                 address.innerText = `Address: ${property.address}`;
                 propertyContainer.appendChild(address);
 
@@ -94,6 +101,8 @@ const getProperties = () => {
                     })
                     .catch(err => console.error(err));
                 })
+
+                
 
 
                 getOutput.appendChild(propertyContainer);
