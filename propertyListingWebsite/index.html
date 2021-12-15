@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Early Property Listings</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
-    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
     <h1>Early Property Listings</h1>
     <ul>
@@ -17,47 +19,46 @@
         <li><a class="active" href="#ViewProperties">View Properties</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <h2>View properties currently listed with us <br> Help us by adding properties that have been newly listed yourself! </h2>
+    <h2>View properties currently listed with us <br> Help us by adding properties that have been newly listed yourself!
+    </h2>
     <section id=properties>
         <h2>Currently listed</h2>
-        <div id="getOutput" class="row row-cols-2 row-cols-md-4 g-4"></div>
+        <div id="getOutput"></div>
     </section>
 
 
     <editingSection>
         <form id="createProperty">
-<label for="propertyAddress">Address:</label>
-<input type="text" name="address" id="propertyAddress">
+            <label for="propertyAddress">Address:</label>
+            <input type="text" name="address" id="propertyAddress">
 
-<label for="GPS Location">GPS Location</label>
-<input type="text" name="gps_location" id="gpsLocation">
+            <label for="GPS Location">GPS Location</label>
+            <input type="text" name="gps_location" id="gpsLocation">
 
-<label for="Property Location">Location:</label>
-<input type="text" name="location" id="propertyLocation">
+            <label for="Property Location">Location:</label>
+            <input type="text" name="location" id="propertyLocation">
 
-<label for="Property Price">Price:</label>
-<input type="text" name="price" id="propertyPrice">
+            <label for="Property Price">Price:</label>
+            <input type="text" name="price" id="propertyPrice">
 
-<label for="Property Bedrooms">Bedrooms:</label>
-<input type="text" name="bedrooms" id="propertyBedrooms">
-<button type="submit">Submit</button>
+            <label for="Property Bedrooms">Bedrooms:</label>
+            <input type="text" name="bedrooms" id="propertyBedrooms">
+            <button type="submit">Submit</button>
         </form>
     </editingSection>
-<section>
-    <h2>Delete a property</h2>
-    <form id="deleteForm">
-    <label for="PropertyId">Id:</label>
-<input type="text" name="id" id="propertyId">
-<button type="submit">Delete</button>
-</form>
-</section>
 
 
-      
+    <section>
+        <form id="deleteForm"></form>
+    </section>
 
 
-        
+
+
+
+
     </main>
     <script src="index.js"></script>
 </body>
+
 </html>

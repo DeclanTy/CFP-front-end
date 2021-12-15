@@ -21,16 +21,26 @@ document.querySelector("#createProperty").addEventListener("submit", function (e
         .post("http://localhost:8080/create", data)
         .then(res => {
             getProperties();
-            form.reset();
-            form.address.focus();
+            this.reset();
+            this.address.focus();
             console.log(res);
         })
         .catch(err => console.error(err));
 });
 
-document.querySelector("#deleteForm").addEventListener("submit", function(event){
-event.preventDefault():=
-});
+document.querySelector("#deleteForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const propertyId = this.propertyId.value;
+
+    axios.delete(`http://localhost:8080/remove/${propertyId}`)
+        .then(res => {
+            console.log(res);
+            this.reset();
+            this.propertyId.focus();
+            getProperties();
+        })
+        .catch(err => console.error(err));
+})
 
 const getProperties = () => {
     axios.get('http://localhost:8080/getAll')
@@ -43,7 +53,7 @@ const getProperties = () => {
                 const propertyContainer = document.createElement("div");
 
                 const address = document.createElement("p");
-                address.innerText = `address: ${property.address}`;
+                address.innerText = `Address: ${property.address}`;
                 propertyContainer.appendChild(address);
 
                 const location = document.createElement("p");
@@ -56,7 +66,15 @@ const getProperties = () => {
                 propertyContainer.appendChild(price);
 
                 const bedrooms = document.createElement("p");
-                bedrooms.innerText = `${property.bedrooms} bedrooms`;
+                if (`${property.bedrooms}`== 0) {
+                    bedrooms.innerText = "Studio";
+                }
+                else if(`${property.bedrooms}`==1){
+                    bedrooms.innerText="1 Bed";
+                }
+                else {
+                    bedrooms.innerText = `${property.bedrooms} Bedrooms`;
+                }
                 propertyContainer.appendChild(bedrooms);
 
                 const gpsLocation = `${property.gps_location}`;
@@ -64,8 +82,23 @@ const getProperties = () => {
                 let gpsValues = new Array();
                 gpsValues = gpsLocation.split(",");
 
+                const propertyDelete= document.createElement("button");
+                propertyDelete.innerText ="Remove";
+                propertyContainer.appendChild(propertyDelete);
+                propertyDelete.addEventListener("click",function(){
+                    axios.delete(`http://localhost:8080/remove/${property.id}`)
+                    .then(res => {
+                        console.log(res);
+
+                        getProperties();
+                    })
+                    .catch(err => console.error(err));
+                })
+
 
                 getOutput.appendChild(propertyContainer);
+                /*insert google map here */
+
 
             }
         })
