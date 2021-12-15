@@ -17,18 +17,45 @@
         <li><a class="active" href="#ViewProperties">View Properties</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <p>View properties currently listed with us <br> Help us by adding properties that have been newly listed yourself! </p>
+    <h2>View properties currently listed with us <br> Help us by adding properties that have been newly listed yourself! </h2>
     <section id=properties>
-        
+        <h2>Currently listed</h2>
+        <div id="getOutput" class="row row-cols-2 row-cols-md-4 g-4"></div>
     </section>
 
+
+    <editingSection>
+        <form id="createProperty">
+<label for="propertyAddress">Address:</label>
+<input type="text" name="address" id="propertyAddress">
+
+<label for="GPS Location">GPS Location</label>
+<input type="text" name="gps_location" id="gpsLocation">
+
+<label for="Property Location">Location:</label>
+<input type="text" name="location" id="propertyLocation">
+
+<label for="Property Price">Price:</label>
+<input type="text" name="price" id="propertyPrice">
+
+<label for="Property Bedrooms">Bedrooms:</label>
+<input type="text" name="bedrooms" id="propertyBedrooms">
+<button type="submit">Submit</button>
+        </form>
+    </editingSection>
+<section>
+    <h2>Delete a property</h2>
+    <form id="deleteForm">
+    <label for="PropertyId">Id:</label>
+<input type="text" name="id" id="propertyId">
+<button type="submit">Delete</button>
+</form>
+</section>
 
 
       
 
-    <!-- <label for="filter">Search:</label>
-    <input type="text" id="filter">
-    <main id="output"> -->
+
         
     </main>
     <script src="index.js"></script>
