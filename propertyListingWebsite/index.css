@@ -1,0 +1,53 @@
+body{
+    background-color: #9AB2B8;
+    font-family: system-ui;
+    font-size:100%;
+}
+h1{
+    background-color: #BABABA;
+    border-radius: 25px;
+    border: 2px solid  darkslategrey;
+    padding: 20px;
+    width: 90%;
+    height: 20%;
+    text-align: center;
+    font-size: 250%;
+  }
+
+  /*css for nav bar*/
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+
+  }
+  
+  li {
+    float: left;
+    
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: grey;
+  }
+  
+  .active {
+    background-color: darkslategrey;
+  }
+  p{
+      text-align: center;
+      font-size: 150%;
+  }
+  
